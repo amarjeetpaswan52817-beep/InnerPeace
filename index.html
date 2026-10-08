@@ -973,4 +973,597 @@
             stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
-            <line x1="2" y1="12" x2="22"
+            <line x1="2" y1="12" x2="22"    x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10
+                     15.3 15.3 0 0 1-4 10
+                     15.3 15.3 0 0 1-4-10
+                     15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span id="langLabel">English</span>
+        </button>
+
+        <div class="lang-dropdown" id="langDropdown">
+          <button onclick="setLang('en','English')" class="active" id="l-en">English</button>
+          <button onclick="setLang('hi','हिन्दी')" id="l-hi">हिन्दी</button>
+          <button onclick="setLang('ar','العربية')" id="l-ar">العربية</button>
+          <button onclick="setLang('zh-CN','中文 (简体)')" id="l-zh-CN">中文 (简体)</button>
+          <button onclick="setLang('zh-TW','中文 (繁體)')" id="l-zh-TW">中文 (繁體)</button>
+          <button onclick="setLang('es','Español')" id="l-es">Español</button>
+          <button onclick="setLang('fr','Français')" id="l-fr">Français</button>
+          <button onclick="setLang('de','Deutsch')" id="l-de">Deutsch</button>
+          <button onclick="setLang('pt','Português')" id="l-pt">Português</button>
+          <button onclick="setLang('ru','Русский')" id="l-ru">Русский</button>
+          <button onclick="setLang('ja','日本語')" id="l-ja">日本語</button>
+          <button onclick="setLang('ko','한국어')" id="l-ko">한국어</button>
+          <button onclick="setLang('it','Italiano')" id="l-it">Italiano</button>
+          <button onclick="setLang('tr','Türkçe')" id="l-tr">Türkçe</button>
+          <button onclick="setLang('nl','Nederlands')" id="l-nl">Nederlands</button>
+          <button onclick="setLang('pl','Polski')" id="l-pl">Polski</button>
+          <button onclick="setLang('sv','Svenska')" id="l-sv">Svenska</button>
+          <button onclick="setLang('id','Bahasa Indonesia')" id="l-id">Bahasa Indonesia</button>
+          <button onclick="setLang('ms','Bahasa Melayu')" id="l-ms">Bahasa Melayu</button>
+          <button onclick="setLang('th','ภาษาไทย')" id="l-th">ภาษาไทย</button>
+          <button onclick="setLang('vi','Tiếng Việt')" id="l-vi">Tiếng Việt</button>
+          <button onclick="setLang('bn','বাংলা')" id="l-bn">বাংলা</button>
+          <button onclick="setLang('ta','தமிழ்')" id="l-ta">தமிழ்</button>
+          <button onclick="setLang('te','తెలుగు')" id="l-te">తెలుగు</button>
+          <button onclick="setLang('mr','मराठी')" id="l-mr">मराठी</button>
+          <button onclick="setLang('ur','اردو')" id="l-ur">اردو</button>
+          <button onclick="setLang('fa','فارسی')" id="l-fa">فارسی</button>
+          <button onclick="setLang('he','עברית')" id="l-he">עברית</button>
+          <button onclick="setLang('el','Ελληνικά')" id="l-el">Ελληνικά</button>
+          <button onclick="setLang('ro','Română')" id="l-ro">Română</button>
+          <button onclick="setLang('hu','Magyar')" id="l-hu">Magyar</button>
+          <button onclick="setLang('cs','Čeština')" id="l-cs">Čeština</button>
+          <button onclick="setLang('uk','Українська')" id="l-uk">Українська</button>
+          <button onclick="setLang('da','Dansk')" id="l-da">Dansk</button>
+          <button onclick="setLang('fi','Suomi')" id="l-fi">Suomi</button>
+          <button onclick="setLang('no','Norsk')" id="l-no">Norsk</button>
+          <button onclick="setLang('af','Afrikaans')" id="l-af">Afrikaans</button>
+          <button onclick="setLang('sw','Kiswahili')" id="l-sw">Kiswahili</button>
+          <button onclick="setLang('am','አማርኛ')" id="l-am">አማርኛ</button>
+          <button onclick="setLang('ne','नेपाली')" id="l-ne">नेपाली</button>
+          <button onclick="setLang('si','සිංහල')" id="l-si">සිංහල</button>
+          <button onclick="setLang('ka','ქართული')" id="l-ka">ქართული</button>
+          <button onclick="setLang('az','Azərbaycan')" id="l-az">Azərbaycan</button>
+          <button onclick="setLang('kk','Қазақша')" id="l-kk">Қазақша</button>
+          <button onclick="setLang('uz','O\'zbek')" id="l-uz">O'zbek</button>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#">Home</a>
+      <a href="#">Proposal</a>
+      <a href="#">Thinkers</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="fade-up" style="transition-delay:0s;">
+          <span class="label hero-label">A Space for Reflection</span>
+
+          <h1 class="hero-title">
+            Words That<br>Still the Mind.
+          </h1>
+
+          <p class="hero-sub">
+            Proposals on meditation, yoga, and the art of living inward —
+            alongside wisdom from the world's greatest spiritual thinkers.
+          </p>
+
+          <button class="btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            Read Proposals
+          </button>
+        </div>
+
+        <div class="hero-img-wrap fade-up" style="transition-delay:0.2s;">
+          <div class="hero-img-inner">
+            <img
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80"
+              alt="Person meditating peacefully by a lake at sunrise"
+              loading="lazy"
+            />
+          </div>
+          <div class="hero-img-overlay"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="container">
+
+      <div class="text-center section-head fade-up">
+        <span class="label">What This Space Is About</span>
+        <h2 class="section-title">A blog, not a course</h2>
+        <p class="section-sub">
+          No subscriptions, no sessions, no guided audio.
+          Just words — honest, reflective, and rooted in ancient wisdom.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-card fade-up" style="transition-delay:0s;">
+          <div class="benefit-icon" style="background:#d1fae5;color:#065f46;">✍️</div>
+          <div>
+            <h3>Original Proposals</h3>
+            <p>
+              Thoughtful, personal writing on meditation,
+              yoga philosophy, and the journey inward.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay:0.1s;">
+          <div class="benefit-icon" style="background:#e0e7ff;color:#3730a3;">💬</div>
+          <div>
+            <h3>Timeless Wisdom</h3>
+            <p>
+              Curated thoughts and words from the world's most respected
+              spiritual teachers.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay:0.2s;">
+          <div class="benefit-icon" style="background:#ffedd5;color:#c2410c;">🌍</div>
+          <div>
+            <h3>Global Perspectives</h3>
+            <p>
+              Voices from across centuries and cultures —
+              Buddhist, Vedantic, Sufi, and beyond.
+            </p>
+          </div>
+        </div>
+
+        <div class="benefit-card fade-up" style="transition-delay:0.3s;">
+          <div class="benefit-icon" style="background:#ffe4e6;color:#be123c;">🧭</div>
+          <div>
+            <h3>Inner Exploration</h3>
+            <p>
+              A space to pause, read slowly, and turn the gaze
+              from the world toward yourself.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ESSAYS -->
+  <section class="essays">
+    <div class="container">
+
+      <div class="text-center section-head fade-up">
+        <span class="label">Words from Within</span>
+        <h2 class="section-title">Pages of Stillness</h2>
+        <p class="section-sub">
+          Personal reflections on meditation, yoga, and the journey inward —
+          written honestly, from experience.
+        </p>
+      </div>
+
+      <div class="essays-grid">
+
+        <article class="essay-card fade-up" style="transition-delay:0s;">
+          <span class="essay-tag tag-meditation">Meditation</span>
+          <h3>Chup Rehna Bhi Ek Jawab Hai</h3>
+          <p>
+            Hum itna bolta hai, itna sunta hai — par kabhi socha hai
+            ki jo cheez sabse gehri hoti hai woh shabd ke bina aati hai?
+            Khamoshi ek language hai. Aur meditation uska grammar.
+          </p>
+          <div class="essay-footer">
+            <span>5 min read</span>
+            <span class="essay-read">Read <span>→</span></span>
+          </div>
+        </article>
+
+        <article class="essay-card fade-up" style="transition-delay:0.12s;">
+          <span class="essay-tag tag-yoga">Yoga</span>
+          <h3>Yoga Sirf Body Ka Kaam Nahi Hai</h3>
+          <p>
+            Log asana dekhte hain aur sochte hain — ye flexibility ka khel hai.
+            Par Patanjali ne jo likha tha woh body ke baare mein nahi,
+            mann ke baare mein tha. Yoga ek andrun ki yatra hai.
+          </p>
+          <div class="essay-footer">
+            <span>6 min read</span>
+            <span class="essay-read">Read <span>→</span></span>
+          </div>
+        </article>
+
+        <article class="essay-card fade-up" style="transition-delay:0.24s;">
+          <span class="essay-tag tag-peace">Inner Peace</span>
+          <h3>Shanti Milti Nahi, Banti Hai</h3>
+          <p>
+            Hum shanti dhundte hain — kisi jagah mein, kisi insaan mein,
+            kisi pal mein. Par jo log sach mein shant hote hain woh bata dete hain:
+            yeh bahar se nahi aati. Yeh andar se banani padti hai.
+          </p>
+          <div class="essay-footer">
+            <span>4 min read</span>
+            <span class="essay-read">Read <span>→</span></span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPLORE -->
+  <section class="explore">
+    <div class="container">
+
+      <div class="explore-grid">
+
+        <div class="explore-left fade-up">
+          <span class="label">Explore by Topic</span>
+          <h2>Proposals for every tradition</h2>
+          <p style="margin-top:1rem;">
+            Whether you are drawn to Buddhist silence, Vedantic inquiry,
+            yogic discipline, or simple present-moment awareness —
+            there is a path here for you.
+          </p>
+        </div>
+
+        <div class="categories-grid">
+
+          <div class="cat-card fade-up" style="transition-delay:0s;">
+            <div class="cat-bg"
+              style="background:linear-gradient(135deg,#2d6a4f,#40916c,#74c69d);">
+            </div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content">
+              <div class="cat-icon">🌅</div>
+              <h3>Mindfulness</h3>
+              <p>Being fully present in each moment</p>
+            </div>
+          </div>
+
+          <div class="cat-card fade-up" style="transition-delay:0.1s;">
+            <div class="cat-bg"
+              style="background:linear-gradient(135deg,#f4a261,#e76f51,#c9a84c);">
+            </div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content">
+              <div class="cat-icon">☀️</div>
+              <h3>Yoga Philosophy</h3>
+              <p>The ancient science of the self</p>
+            </div>
+          </div>
+
+          <div class="cat-card fade-up" style="transition-delay:0.2s;">
+            <div class="cat-bg"
+              style="background:linear-gradient(135deg,#6a4c93,#9b72cf,#c084fc);">
+            </div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content">
+              <div class="cat-icon">🌇</div>
+              <h3>Buddhist Thought</h3>
+              <p>Compassion, impermanence, and peace</p>
+            </div>
+          </div>
+
+          <div class="cat-card fade-up" style="transition-delay:0.3s;">
+            <div class="cat-bg"
+              style="background:linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+            </div>
+            <div class="cat-overlay"></div>
+            <div class="cat-content">
+              <div class="cat-icon">🌙</div>
+              <h3>Vedanta</h3>
+              <p>Non-duality and the nature of consciousness</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPICS -->
+  <section class="topics">
+    <div class="container">
+
+      <div class="text-center section-head fade-up">
+        <span class="label">Browse by Theme</span>
+        <h2 class="section-title">Popular Topics</h2>
+        <p class="section-sub">
+          Every essay lives inside a theme. Find the one that speaks
+          to where you are right now.
+        </p>
+      </div>
+
+      <div class="topics-wrap">
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#dbeafe;color:#2563eb;">💨</div>
+          <div>
+            <h3>Stillness</h3>
+            <p>12 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#e0f2fe;color:#0284c7;">🪶</div>
+          <div>
+            <h3>Breath</h3>
+            <p>9 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#f3e8ff;color:#9333ea;">👁️</div>
+          <div>
+            <h3>Awareness</h3>
+            <p>11 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#ffe4e6;color:#e11d48;">❤️</div>
+          <div>
+            <h3>Compassion</h3>
+            <p>8 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#fef3c7;color:#d97706;">🔥</div>
+          <div>
+            <h3>Discipline</h3>
+            <p>7 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#dcfce7;color:#16a34a;">🌿</div>
+          <div>
+            <h3>Nature</h3>
+            <p>6 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#e0e7ff;color:#4f46e5;">⭐</div>
+          <div>
+            <h3>Consciousness</h3>
+            <p>10 Proposals</p>
+          </div>
+        </div>
+
+        <div class="topic-pill fade-up">
+          <div class="topic-icon" style="background:#ccfbf1;color:#0d9488;">🌊</div>
+          <div>
+            <h3>Surrender</h3>
+            <p>5 Proposals</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <div class="container">
+
+      <div class="quote-inner fade-up">
+        <span class="label">Thought of the Season</span>
+
+        <div class="quote-divider"></div>
+
+        <blockquote>
+          "The quieter you become, the more you are able to hear."
+        </blockquote>
+
+        <div class="quote-author">Rumi</div>
+
+        <div class="quote-desc">
+          13th-century Persian poet and Sufi mystic
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TRAVELERS -->
+  <section class="travelers">
+    <div class="container">
+
+      <div class="text-center section-head fade-up">
+        <span class="label">Wisdom from Around the World</span>
+        <h2 class="section-title">Inward Travelers</h2>
+        <p class="section-sub">
+          Voices that have guided millions on the path to inner
+          stillness and self-discovery.
+        </p>
+      </div>
+
+      <div class="travelers-wrap" id="travelersWrap"></div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand">
+            <div class="footer-brand-icon">🍃</div>
+            <span>InnerPeace</span>
+          </div>
+
+          <p class="footer-desc">
+            Your tranquil digital home for daily calm, clarity,
+            and guided mindfulness practices. Breathe in, breathe out.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Read</h4>
+          <ul>
+            <li><a href="#">Proposals</a></li>
+            <li><a href="#">Thinkers</a></li>
+            <li><a href="#">Topics</a></li>
+            <li><a href="#">Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Newsletter</a></li>
+            <li><a href="#">Support</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="year"></span> InnerPeace. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+
+      <!-- AMARJEET -->
+      <div class="amarjeet-credit">
+        🍃 Amarjeet
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.getElementById('year').textContent =
+      new Date().getFullYear();
+
+    const travelers = [
+      ["Gautama Buddha","India (Nepal)"],
+      ["Thich Nhat Hanh","Vietnam"],
+      ["Deepak Chopra","India"],
+      ["Eckhart Tolle","Germany"],
+      ["Sadhguru","India"],
+      ["Dalai Lama","Tibet"],
+      ["Pema Chödrön","USA"],
+      ["Jack Kornfield","USA"],
+      ["Sharon Salzberg","USA"],
+      ["Jon Kabat-Zinn","USA"],
+      ["Ram Dass","USA"],
+      ["Sri Sri Ravi Shankar","India"],
+      ["Osho","India"],
+      ["B.K.S. Iyengar","India"],
+      ["Mooji","Jamaica"],
+      ["Adyashanti","USA"],
+      ["Paramahansa Yogananda","India"],
+      ["Swami Vivekananda","India"],
+      ["Krishnamurti","India"],
+      ["Alan Watts","UK"],
+      ["Tara Brach","USA"]
+    ];
+
+    const wrap = document.getElementById('travelersWrap');
+
+    travelers.forEach(([name, country]) => {
+      wrap.innerHTML += `
+        <div class="guru-pill">
+          <div class="guru-avatar">${name[0]}</div>
+          <div>
+            <div class="guru-name">${name}</div>
+            <div class="guru-country">${country}</div>
+          </div>
+        </div>
+      `;
+    });
+
+    const ham = document.getElementById('hamburger');
+    const mNav = document.getElementById('mobileNav');
+
+    ham.addEventListener('click', () => {
+      ham.classList.toggle('open');
+      mNav.classList.toggle('open');
+    });
+
+    const langToggle = document.getElementById('langToggle');
+    const langDropdown = document.getElementById('langDropdown');
+
+    langToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('open');
+    });
+
+    langDropdown.addEventListener('click', e => {
+      e.stopPropagation();
+    });
+
+    let activeLang = 'en';
+
+    function setLang(code, label) {
+      document
+        .querySelectorAll('.lang-dropdown button')
+        .forEach(b => b.classList.remove('active'));
+
+      const btn = document.getElementById('l-' + code);
+
+      if (btn) {
+        btn.classList.add('active');
+      }
+
+      document.getElementById('langLabel').textContent = label;
+
+      activeLang = code;
+
+      langDropdown.classList.remove('open');
+
+      const sel =
+        document.querySelector('#google_translate_element select');
+
+      if (sel) {
+        sel.value = code;
+        sel.dispatchEvent(new Event('change'));
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.fo
