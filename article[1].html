@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f5f1e6" />
+  <title>Article | InnerPeace</title>
+  <meta name="description" content="A personal reflection from InnerPeace." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: hsl(42, 38%, 94%);
+      --bg-card: hsl(42, 30%, 97%);
+      --fg: hsl(24, 32%, 12%);
+      --fg-muted: hsl(25, 16%, 46%);
+      --border: hsl(36, 24%, 78%);
+      --primary: hsl(28, 62%, 36%);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font-sans);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .article-shell {
+      width: min(100% - 2rem, 780px);
+      margin: 0 auto;
+      padding: clamp(2rem, 7vw, 5rem) 0;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: clamp(2rem, 6vw, 4rem);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+
+    .back-link:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    .article-card {
+      padding: clamp(1.5rem, 6vw, 4rem);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      box-shadow: 0 14px 42px rgba(0, 0, 0, 0.04);
+    }
+
+    .article-category {
+      display: inline-block;
+      margin-bottom: 0.8rem;
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2 {
+      font-family: var(--font-serif);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      font-weight: 600;
+    }
+
+    .article-subtitle {
+      margin: 0.75rem 0 0;
+      color: var(--fg-muted);
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 3vw, 1.65rem);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .article-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin: 1.25rem 0 2rem;
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+    }
+
+    .article-content {
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .article-content h2 {
+      margin: 2rem 0 0.65rem;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content p {
+      margin: 0 0 1.15rem;
+      color: var(--fg-muted);
+      font-size: 1rem;
+    }
+
+    .article-content ol {
+      margin: 0 0 1.15rem;
+      padding-left: 1.5rem;
+      color: var(--fg-muted);
+    }
+
+    .article-content li {
+      padding-left: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content .signature {
+      margin-top: 2rem;
+      color: var(--fg);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .not-found {
+      color: var(--fg-muted);
+    }
+
+    @media (max-width: 480px) {
+      .article-shell {
+        width: min(100% - 1.25rem, 780px);
+      }
+
+      .article-card {
+        border-radius: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="back-link" href="index.html">← Back to Home</a>
+    <article class="article-card" id="article" aria-live="polite"></article>
+  </main>
+
+  <script>
+    const articles = {
+      "chup-rehna-bhi-ek-jawab-hai": {
+        title: "Chup Rehna Bhi Ek Jawab Hai",
+        category: "Meditation",
+        readingTime: "5 min read",
+        description: "Khamoshi bhi ek jawab hai — aur kabhi-kabhi sabse sachcha jawab.",
+        content: `
+          <h2>Shabdon ke beech ki jagah</h2>
+          <p>Hum itna bolte hain, itna sunte hain — par kabhi socha hai ki jo cheez sabse gehri hoti hai, woh aksar shabd ke bina aati hai? Kisi apne ke paas chup-chaap baithna, bina kuch samjhaye kisi ka dard sunna, ya subah ki pehli roshni ko kuch pal dekhte rehna — in lamhon ko kisi bade vakya ki zarurat nahi hoti.</p>
+          <p>Khamoshi khaali jagah nahi hai. Usmein woh baatein bhi jagah paati hain jinhe hum jaldi mein keh nahi paate. Jab hum har pal jawab dene ki koshish chhodte hain, tab saamne wale ko aur khud ko sach-much sunne ka mauka milta hai.</p>
+          <h2>Chup rehna aur bachna alag hain</h2>
+          <p>Har chup rehna samajhdari nahi hota. Kabhi hum darr, gusse ya thakan ke kaaran bhi bolna band kar dete hain. Lekin ek doosri khamoshi bhi hoti hai: woh jo sochne ke liye jagah banati hai, jo gusse ko turant shabd banne se rok kar humein apni niyat dekhne deti hai.</p>
+          <p>Us pal khamoshi kisi ko saza dene ka tareeka nahi, balki apni baat ko saaf karne ka avsar hoti hai. Hum apne aap se pooch sakte hain: kya mujhe samjha jaana hai, ya sirf jeetna hai? Kya jo main kehne ja raha hoon, woh zaroori aur dayalu dono hai?</p>
+          <h2>Meditation ki khamoshi</h2>
+          <p>Meditation mein bhi khamoshi ka matlab vicharon ko zabardasti rokna nahi hai. Hum baithte hain, saans ko mehsoos karte hain, aur dekhte hain ki mann kitni baatein lekar aata hai. Vichar aate hain; hum unhe pehchaan kar dheere se saans par laut aate hain. Isi lautne mein ek shaant jawab chhupa hai.</p>
+          <p>Dheere-dheere hum har vichar ke peeche bhaagna chhod dete hain. Humein pata chalta hai ki har baat par turant pratikriya dena zaroori nahi. Kabhi-kabhi ek gehri saans, ek pal ka viraam, aur dhyaan se sunna hi sabse imaandaar jawab hota hai.</p>
+          <h2>Jab shabd kam pad jaayen</h2>
+          <p>Agle baar jab koi mushkil baat saamne aaye, apne aap ko ek pal dena. Khamoshi ko deewar nahi, ek khuli jagah banne dena. Phir jo kehna ho, use saaf aur narmi se kehna. Aur agar kuch kehna zaroori na lage, to bina ghabrahat ke chup rehna bhi theek hai.</p>
+          <p>Khamoshi har sawaal ka jawab nahi deti. Lekin woh itni jagah zaroor bana deti hai ki hum apna asli jawab sun saken.</p>
+        `
+      },
+      "yoga-sirf-body-ka-kaam-nahi-hai": {
+        title: "Yoga Sirf Body Ka Kaam Nahi Hai",
+        category: "Yoga",
+        readingTime: "6 min read",
+        description: "Yoga ko sirf asana nahi, mann aur jeevan ki ek poori yatra ke roop mein dekhna.",
+        content: `
+          <h2>Asana se aage</h2>
+          <p>Log asana dekhte hain aur sochte hain — ye flexibility ka khel hai. Seedhi peeth, santulit mudra, aur gehri saans yoga ka dikhne wala hissa hain. Lekin agar yoga sirf shareer ko modna hota, to uska asar chatai ke bahar khatam ho jaata.</p>
+          <p>Yoga ka ek arth judna bhi hai: apne shareer, saans aur mann ke saath phir se sambandh banana. Jab hum kisi mudra mein rukte hain, hum sirf muscles ko nahi dekh rahe hote. Hum yeh bhi dekhte hain ki asuvidha aane par hum ghabraate hain, zor lagate hain, ya dhairya se apni seema ko samajhte hain.</p>
+          <h2>Mann ko dekhne ka abhyas</h2>
+          <p>Patanjali ke yog-sutra yoga ko mann ki chanchalta ko shaant karne ki disha mein samajhte hain. Iska matlab yeh nahi ki mann mein kabhi vichar na aayein. Matlab hai vicharon ke aane par unke peeche beh jaane ke bajay unhe pehchaan pana.</p>
+          <p>Saans par dhyaan dena is abhyas ka ek saral darwaza hai. Saans andar aati hai, bahar jaati hai. Dhyaan bhatakta hai, aur hum bina khud ko dosh diye laut aate hain. Yeh chhota sa lautna humein chatai par bhi aur rozmarra ke faislon mein bhi zyada jagruk banata hai.</p>
+          <h2>Chatai ke bahar ka yoga</h2>
+          <p>Yoga ka ek gehra pehlu hamare vyavahaar mein dikhta hai: hum apne saath aur doosron ke saath kaise pesh aate hain. Imaandari, santosh, sanyam aur daya jaise moolya kisi kathin pose se kam mahatvapurn nahi. Inka abhyas tab hota hai jab hum apni baat par ruk kar sochte hain, apni galti sweekar karte hain, ya kisi aur ko dhyaan se sunte hain.</p>
+          <p>Isliye yoga ka abhyas kabhi-kabhi bahut saadhaaran nazar aata hai. Thakan mein shareer ki baat sunna. Har din apni tulna kisi aur se na karna. Gusse mein turant jawab na dena. Yeh sab bhi awareness aur santulan ke abhyas hain.</p>
+          <h2>Apni yatra, apni raftaar</h2>
+          <p>Har shareer alag hai, aur har din ki kshamata bhi alag. Yoga kisi perfect shape tak pahunchne ki daud nahi. Agar hum sirf doosron jaisa dikhne ke liye abhyas karte hain, to hum usi mann ko aur bechain kar sakte hain jise yoga samajhne mein madad karta hai.</p>
+          <p>Agli baar chatai par aayen, to ek mudra ke saath apni saans aur apne iraade ko bhi dekhein. Shayad yoga tab body se shuru ho, lekin uska asli kaam humein apne poore jeevan mein zyada present rehna sikhana ho.</p>
+        `
+      },
+      "shanti-milti-nahi-banti-hai": {
+        title: "Shanti Milti Nahi, Banti Hai",
+        category: "Inner Peace",
+        readingTime: "4 min read",
+        description: "Shanti bahar ki perfect paristhiti nahi, roz ke chhote chunaavon se banta hua rishta hai.",
+        content: `
+          <h2>Shanti ki talaash</h2>
+          <p>Hum shanti dhoondte hain — kisi jagah mein, kisi insaan mein, kisi khaas pal mein. Hum sochte hain ki jab kaam khatam ho jaayega, jab sab log humein samajhne lagenge, ya jab zindagi hamari yojana ke mutabik chalegi, tab mann shaant ho jaayega.</p>
+          <p>Lekin zindagi hamesha ek nayi baat saamne laati hai. Agar shanti ke liye har paristhiti ka theek hona zaroori ho, to shanti hamesha kal par talti rahegi. Iska matlab yeh nahi ki mushkil haalaat ko nazarandaaz karein. Matlab hai ki unke beech bhi apne liye ek chhota sa sthir pal banana seekhein.</p>
+          <h2>Chhoti aadaton se shuruaat</h2>
+          <p>Shanti kabhi ek bade faisle se nahi, balki chhote chunaavon se banti hai. Subah phone dekhne se pehle teen gehri saansein lena. Ek kaam karte waqt kuch der sirf usi kaam ke saath rehna. Thake hue hon to apni thakan ko maan lena, na ki use nakaami samajhna.</p>
+          <p>Jab mann tez bhaag raha ho, apne aas-paas ki ek cheez ko dhyaan se dekhein: roshni, hawa, ya pairon ke neeche zameen. Yeh mushkil ko mitaata nahi, lekin humein is pal mein wapas laata hai. Isi pal mein agla shaant kadam chunna mumkin hota hai.</p>
+          <h2>Shanti ka matlab sab kuch sehna nahi</h2>
+          <p>Andar ki shanti ka matlab yeh nahi ki hum har baat ko chup-chaap sweekar karein. Kabhi shanti ka agla kadam ek zaroori baat kehna, madad maangna, ya kisi seema ko saaf karna hota hai. Shaant rehkar kiya gaya sachcha faisla bhi shanti ka hissa hai.</p>
+          <p>Hum doosron ki madad se bhi sambhalte hain. Kisi bharosemand insaan se apni baat kehna kamzori nahi. Kabhi apne dukh ko baantne se uska bojh halka hota hai aur agla kadam saaf dikhne lagta hai.</p>
+          <h2>Roz thoda sa banana</h2>
+          <p>Shanti koi inaam nahi jo sab kuch kar lene ke baad milta hai. Yeh apne mann ke saath banaya hua rishta hai — dhairya, dhyaan aur daya se, baar-baar. Har din shaant nahi hoga, aur yeh bilkul maanav hai. Par har din ek pal aisa ho sakta hai jahan hum ruk kar apni saans mehsoos karein.</p>
+          <p>Shanti hamesha milti nahi. Kabhi use humein apne agle chhote, sajag chunaav se banana padta hai.</p>
+        `
+      },
+      "this-too-shall-change": {
+        title: "This Too Shall Change",
+        subtitle: "When the darkness ran deep, and one small breath showed me the way",
+        category: "Meditation",
+        readingTime: "8 min read",
+        description: "A personal reflection on meditation, difficult seasons, and the changing nature of pain.",
+        content: `
+          <h2>When I Couldn’t See a Way Forward</h2>
+          <p>There are phases in life when a person looks fine on the outside but is falling apart on the inside. That is what happened to me. There came a time when I began to feel that I had been left behind, and that everyone else had moved ahead. A regret settled in my mind, and it slowly grew heavier.</p>
+          <p>Then everything began to change. I lost my appetite. My head felt heavy, as if something inside was about to burst. I had stopped meeting people. Even talking on the phone felt like a burden. There was just a room, and me.</p>
+          <p>The hardest part was that I didn’t have the courage to tell anyone. Everyone was at home, but I never told anyone what was going on inside me. I felt that no one would understand what I was going through.</p>
+          <p>In that phase, I learned something I still remember today: when a person keeps thinking alone, sorrow keeps growing, because the mind keeps going around in the same circle.</p>
+          <h2>A Book, a Small Turning Point</h2>
+          <p>One day, while scrolling on my phone, I came across a book by Osho. I wasn’t looking for anything deep. My curiosity was simply about what had been written on life and death.</p>
+          <p>The book spoke about meditation. One idea that I understood most deeply was that life and death are not separate, they are two ends of the same thread. Slowly, my curiosity turned into understanding. I realised that whatever I was searching for was not in some faraway world, but within me.</p>
+          <h2>My Practice: Just Watching</h2>
+          <p>Every morning I would sit quietly. Eyes closed, back straight, attention only on the breath. The breath comes in, the breath goes out. That’s all.</p>
+          <p>In the first few days, it felt like nothing was happening. My mind wandered here and there, old memories came up, and the regrets returned. But I made one rule: when the mind wandered, I wouldn’t scold it, I would just lovingly bring it back to the breath.</p>
+          <p>In meditation, this “bringing back” is the real practice. No matter how many times the mind wanders, coming back each time is the victory.</p>
+          <p>After a few weeks, I noticed a change. The voice inside my mind grew a little quieter. Thoughts still came, but they no longer swept me away.</p>
+          <h2>The First Big Lesson: I Am Not My Thoughts</h2>
+          <p>The first thing meditation taught me was that thoughts and I are not the same.</p>
+          <p>When we are sad, we start believing “I am worthless” or “nothing will ever work out for me.” But when we watch our thoughts in meditation, we see that they are like clouds. They come, they linger, and they pass. The sky stays the same, while the clouds keep moving.</p>
+          <p>When this understanding sinks in, the weight of sorrow becomes a little lighter. Thoughts still arrive, but they are no longer my “owners.” They are just guests, coming and going.</p>
+          <h2>The Second Big Lesson: “This Too Shall Change”</h2>
+          <p>One short sentence is now my greatest strength: “This too shall change.”</p>
+          <p>Earlier, when trouble came, I would panic, or give up and sit down. Now I pause for a moment. I tell myself that this is here right now, but it won’t stay forever. And strangely, it is true. Every difficulty in my life, however big it seemed, has changed with time.</p>
+          <p>This sentence does not deny the pain. It only reminds me that sorrow is like a season. It comes, and it goes.</p>
+          <p>The Buddha also said this: everything is impermanent, meaning everything keeps changing. And this applies not only to sorrow, but to happiness too. So we should neither get carried away in joy, nor be crushed in grief.</p>
+          <h2>The Third Big Lesson: Peace Doesn’t Mean Being Alone</h2>
+          <p>Meditation also taught me another deep thing, which I had earlier misunderstood. I used to think that peace meant staying away from everyone. But real peace is not found in loneliness, it is found in staying connected.</p>
+          <p>When we are in pain, we often cut ourselves off from the people close to us. We think, “Why tell anyone?” or “No one will understand.” But the truth is that whatever we keep suppressed inside grows heavier. And whatever we share with someone we trust, half of its weight is lifted.</p>
+          <p>Meditation gives us inner support. But relationships, conversation, and sitting with loved ones are the outer support. We need both. One alone is never enough.</p>
+          <h2>How I Am Today</h2>
+          <p>I won’t claim that meditation has solved all my problems. The difficulties are still there. There are worries about money, the pressure of studies, and expectations from myself as I grow older.</p>
+          <p>But one thing has changed: now I have a way to face them. Earlier, when trouble came, I would break down. Now I take a deep breath, remind myself that this will change, and then take one small step.</p>
+          <p>I believe this is the real gift of meditation. It doesn’t remove life’s difficulties, but it gives us the strength to carry them.</p>
+          <h2>If You Are Going Through Something Similar</h2>
+          <p>If you too are going through a time when the darkness feels deep, I’d like to say a few small things:</p>
+          <ol>
+            <li>Start with just 5 minutes. Sit quietly and watch your breath come and go. There is nothing to change. Just watch.</li>
+            <li>Don’t scold yourself when the mind wanders. Gently bring it back. That is the practice.</li>
+            <li>Don’t try forceful or unusual experiments. Any attempt with the breath that causes discomfort is not meditation.</li>
+            <li>Talk to someone close to you. A friend, a sister, or a parent. A small conversation can be the beginning.</li>
+          </ol>
+          <p>I know that words alone don’t change a life. But a small beginning, five quiet minutes, one honest conversation with someone close, together these can change a lot.</p>
+          <p>And whenever the darkness feels very deep, just remember one sentence:</p>
+          <p>“This too shall change.”</p>
+          <p class="signature">Amarjeet</p>
+        `
+      }
+    };
+
+    const slug = new URLSearchParams(window.location.search).get("slug");
+    const article = articles[slug];
+    const articleElement = document.getElementById("article");
+
+    if (article) {
+      document.title = `${article.title} | InnerPeace`;
+      document.querySelector('meta[name="description"]').content = article.description;
+      articleElement.innerHTML = `
+        <header>
+          <span class="article-category">${article.category}</span>
+          <h1>${article.title}</h1>
+          ${article.subtitle ? `<p class="article-subtitle">${article.subtitle}</p>` : ""}
+          <div class="article-details">
+            <span>${article.category}</span>
+            <span>${article.readingTime}</span>
+          </div>
+        </header>
+        <div class="article-content">${article.content}</div>
+      `;
+    } else {
+      document.title = "Article Not Found | InnerPeace";
+      articleElement.innerHTML = `
+        <h1>Article not found</h1>
+        <p class="not-found">This article may have moved or the link may be incomplete. Return home to choose another proposal.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
