@@ -517,6 +517,149 @@
       gap: 0.5rem;
     }
 
+    body.article-view {
+      min-height: 100vh;
+    }
+
+    body.article-view > :not(#standaloneArticle) {
+      display: none !important;
+    }
+
+    .standalone-article {
+      min-height: 100vh;
+      padding: clamp(2rem, 7vw, 5rem) 0;
+    }
+
+    .standalone-article-shell {
+      width: min(100% - 2rem, 780px);
+      margin: 0 auto;
+    }
+
+    .standalone-back-link {
+      display: inline-flex;
+      margin-bottom: clamp(2rem, 6vw, 4rem);
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .standalone-article-card {
+      padding: clamp(1.5rem, 6vw, 4rem);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      box-shadow: 0 14px 42px rgba(0,0,0,0.04);
+    }
+
+    .standalone-article-card h1,
+    .standalone-article-card h2 {
+      font-family: var(--font-serif);
+    }
+
+    .standalone-article-card h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+
+    .standalone-article-subtitle {
+      color: var(--fg-muted);
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 3vw, 1.65rem);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .standalone-article-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin: 1.25rem 0 2rem;
+      color: var(--fg-muted);
+      font-size: 0.85rem;
+    }
+
+    .standalone-article-content {
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .standalone-article-content h2 {
+      margin: 2rem 0 0.65rem;
+      font-size: clamp(1.5rem, 5vw, 2rem);
+      line-height: 1.2;
+    }
+
+    .standalone-article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .standalone-article-content p,
+    .standalone-article-content ol {
+      margin: 0 0 1.15rem;
+      color: var(--fg-muted);
+      font-size: 1rem;
+    }
+
+    .standalone-article-content ol {
+      padding-left: 1.5rem;
+    }
+
+    .standalone-article-content li {
+      padding-left: 0.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .standalone-article-content .signature {
+      margin-top: 2rem;
+      color: var(--fg);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .wisdom-summary-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .wisdom-summary-table th,
+    .wisdom-summary-table td {
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .wisdom-summary-table th {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .wisdom-summary-table td {
+      color: var(--fg-muted);
+    }
+
+    @media (max-width: 560px) {
+      .wisdom-summary-table th,
+      .wisdom-summary-table td {
+        padding: 0.55rem 0.35rem;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .standalone-article-shell {
+        width: min(100% - 1.25rem, 780px);
+      }
+
+      .standalone-article-card {
+        border-radius: 1rem;
+      }
+    }
+
     /* ══════════════════════════
        FEATURED ESSAYS
     ══════════════════════════ */
@@ -1171,7 +1314,7 @@
 
       <div class="benefits-grid">
 
-        <a href="article.html?slug=this-too-shall-change" class="benefit-card proposal-card fade-up" style="transition-delay:0s;" aria-label="Read This Too Shall Change">
+        <a href="?article=this-too-shall-change" class="benefit-card proposal-card fade-up" style="transition-delay:0s;" aria-label="Read This Too Shall Change">
           <div class="benefit-icon" style="background:#d1fae5;color:#065f46;">
             ✍️
           </div>
@@ -1184,44 +1327,44 @@
           </div>
         </a>
 
-        <div class="benefit-card fade-up" style="transition-delay:0.1s;">
+        <a href="?article=timeless-wisdom" class="benefit-card proposal-card fade-up" style="transition-delay:0.1s;" aria-label="Read Wo Baatein Jo Kabhi Purani Nahi Hotin">
           <div class="benefit-icon" style="background:#e0e7ff;color:#3730a3;">
             💬
           </div>
-          <div>
+          <div class="proposal-summary">
             <h3>Timeless Wisdom</h3>
             <p>
               Curated thoughts and words from the world's
               most respected spiritual teachers.
             </p>
           </div>
-        </div>
+        </a>
 
-        <div class="benefit-card fade-up" style="transition-delay:0.2s;">
+        <a href="?article=global-perspectives" class="benefit-card proposal-card fade-up" style="transition-delay:0.2s;" aria-label="Read Raaste Alag, Manzil Ek">
           <div class="benefit-icon" style="background:#ffedd5;color:#c2410c;">
             🌍
           </div>
-          <div>
+          <div class="proposal-summary">
             <h3>Global Perspectives</h3>
             <p>
               Voices from across centuries and cultures —
               Buddhist, Vedantic, Sufi, and beyond.
             </p>
           </div>
-        </div>
+        </a>
 
-        <div class="benefit-card fade-up" style="transition-delay:0.3s;">
+        <a href="?article=inner-exploration" class="benefit-card proposal-card fade-up" style="transition-delay:0.3s;" aria-label="Read Nazar Andar Ki Taraf">
           <div class="benefit-icon" style="background:#ffe4e6;color:#be123c;">
             🧭
           </div>
-          <div>
+          <div class="proposal-summary">
             <h3>Inner Exploration</h3>
             <p>
               A space to pause, read slowly, and turn the gaze
               from the world toward yourself.
             </p>
           </div>
-        </div>
+        </a>
 
       </div>
     </div>
@@ -1299,7 +1442,7 @@
           </div>
         </a>
 
-        <a class="essay-card fade-up" href="article.html?slug=this-too-shall-change" style="transition-delay:0.36s;" aria-label="Read This Too Shall Change">
+        <a class="essay-card fade-up" href="?article=this-too-shall-change" style="transition-delay:0.36s;" aria-label="Read This Too Shall Change">
           <span class="essay-tag tag-meditation">Meditation</span>
 
           <h3>This Too Shall Change</h3>
@@ -1590,8 +1733,286 @@
     </div>
   </footer>
 
+  <main class="standalone-article" id="standaloneArticle" hidden>
+    <div class="standalone-article-shell">
+      <a class="standalone-back-link" href="./">← Back to Home</a>
+      <article class="standalone-article-card" id="changeArticle">
+        <header>
+          <h1>This Too Shall Change</h1>
+          <p class="standalone-article-subtitle">When the darkness ran deep, and one small breath showed me the way</p>
+          <div class="standalone-article-details">
+            <span>Meditation</span>
+            <span>8 min read</span>
+          </div>
+        </header>
+
+        <div class="standalone-article-content">
+          <h2>When I Couldn’t See a Way Forward</h2>
+          <p>There are phases in life when a person looks fine on the outside but is falling apart on the inside. That is what happened to me. There came a time when I began to feel that I had been left behind, and that everyone else had moved ahead. A regret settled in my mind, and it slowly grew heavier.</p>
+          <p>Then everything began to change. I lost my appetite. My head felt heavy, as if something inside was about to burst. I had stopped meeting people. Even talking on the phone felt like a burden. There was just a room, and me.</p>
+          <p>The hardest part was that I didn’t have the courage to tell anyone. Everyone was at home, but I never told anyone what was going on inside me. I felt that no one would understand what I was going through.</p>
+          <p>In that phase, I learned something I still remember today: when a person keeps thinking alone, sorrow keeps growing, because the mind keeps going around in the same circle.</p>
+
+          <h2>A Book, a Small Turning Point</h2>
+          <p>One day, while scrolling on my phone, I came across a book by Osho. I wasn’t looking for anything deep. My curiosity was simply about what had been written on life and death.</p>
+          <p>The book spoke about meditation. One idea that I understood most deeply was that life and death are not separate, they are two ends of the same thread. Slowly, my curiosity turned into understanding. I realised that whatever I was searching for was not in some faraway world, but within me.</p>
+
+          <h2>My Practice: Just Watching</h2>
+          <p>Every morning I would sit quietly. Eyes closed, back straight, attention only on the breath. The breath comes in, the breath goes out. That’s all.</p>
+          <p>In the first few days, it felt like nothing was happening. My mind wandered here and there, old memories came up, and the regrets returned. But I made one rule: when the mind wandered, I wouldn’t scold it, I would just lovingly bring it back to the breath.</p>
+          <p>In meditation, this “bringing back” is the real practice. No matter how many times the mind wanders, coming back each time is the victory.</p>
+          <p>After a few weeks, I noticed a change. The voice inside my mind grew a little quieter. Thoughts still came, but they no longer swept me away.</p>
+
+          <h2>The First Big Lesson: I Am Not My Thoughts</h2>
+          <p>The first thing meditation taught me was that thoughts and I are not the same.</p>
+          <p>When we are sad, we start believing “I am worthless” or “nothing will ever work out for me.” But when we watch our thoughts in meditation, we see that they are like clouds. They come, they linger, and they pass. The sky stays the same, while the clouds keep moving.</p>
+          <p>When this understanding sinks in, the weight of sorrow becomes a little lighter. Thoughts still arrive, but they are no longer my “owners.” They are just guests, coming and going.</p>
+
+          <h2>The Second Big Lesson: “This Too Shall Change”</h2>
+          <p>One short sentence is now my greatest strength: “This too shall change.”</p>
+          <p>Earlier, when trouble came, I would panic, or give up and sit down. Now I pause for a moment. I tell myself that this is here right now, but it won’t stay forever. And strangely, it is true. Every difficulty in my life, however big it seemed, has changed with time.</p>
+          <p>This sentence does not deny the pain. It only reminds me that sorrow is like a season. It comes, and it goes.</p>
+          <p>The Buddha also said this: everything is impermanent, meaning everything keeps changing. And this applies not only to sorrow, but to happiness too. So we should neither get carried away in joy, nor be crushed in grief.</p>
+
+          <h2>The Third Big Lesson: Peace Doesn’t Mean Being Alone</h2>
+          <p>Meditation also taught me another deep thing, which I had earlier misunderstood. I used to think that peace meant staying away from everyone. But real peace is not found in loneliness, it is found in staying connected.</p>
+          <p>When we are in pain, we often cut ourselves off from the people close to us. We think, “Why tell anyone?” or “No one will understand.” But the truth is that whatever we keep suppressed inside grows heavier. And whatever we share with someone we trust, half of its weight is lifted.</p>
+          <p>Meditation gives us inner support. But relationships, conversation, and sitting with loved ones are the outer support. We need both. One alone is never enough.</p>
+
+          <h2>How I Am Today</h2>
+          <p>I won’t claim that meditation has solved all my problems. The difficulties are still there. There are worries about money, the pressure of studies, and expectations from myself as I grow older.</p>
+          <p>But one thing has changed: now I have a way to face them. Earlier, when trouble came, I would break down. Now I take a deep breath, remind myself that this will change, and then take one small step.</p>
+          <p>I believe this is the real gift of meditation. It doesn’t remove life’s difficulties, but it gives us the strength to carry them.</p>
+
+          <h2>If You Are Going Through Something Similar</h2>
+          <p>If you too are going through a time when the darkness feels deep, I’d like to say a few small things:</p>
+          <ol>
+            <li>Start with just 5 minutes. Sit quietly and watch your breath come and go. There is nothing to change. Just watch.</li>
+            <li>Don’t scold yourself when the mind wanders. Gently bring it back. That is the practice.</li>
+            <li>Don’t try forceful or unusual experiments. Any attempt with the breath that causes discomfort is not meditation.</li>
+            <li>Talk to someone close to you. A friend, a sister, or a parent. A small conversation can be the beginning.</li>
+          </ol>
+          <p>I know that words alone don’t change a life. But a small beginning, five quiet minutes, one honest conversation with someone close, together these can change a lot.</p>
+          <p>And whenever the darkness feels very deep, just remember one sentence:</p>
+          <p>“This too shall change.”</p>
+          <p class="signature">Amarjeet</p>
+        </div>
+      </article>
+
+      <article class="standalone-article-card" id="timelessWisdomArticle" hidden>
+        <header>
+          <h1>Wo Baatein Jo Kabhi Purani Nahi Hotin</h1>
+          <p class="standalone-article-subtitle">Alag-alag yugon ke guruon ne ek hi baat alag shabdon me kahi</p>
+          <div class="standalone-article-details">
+            <span>Timeless Wisdom</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="standalone-article-content">
+          <h2>Ek hi nadi, alag-alag kinare</h2>
+          <p>Buddha, Vivekananda, Krishnamurti, Thich Nhat Hanh: inka samay alag tha, desh alag the, bhasha alag thi. Phir bhi inki baatein padho to ek ajeeb si samanta dikhti hai. Sab ek hi taraf ishara karte hain: <strong>sukun bahar nahi, andar milta hai.</strong></p>
+          <p>Is article me kuch aise hi vichar hain, jo sadiyon baad bhi taaza lagte hain.</p>
+
+          <h2>1. Gautama Buddha: mann hi sab kuch shuru karta hai</h2>
+          <p>Buddha ki sabse bunyadi seekh ye hai ki hamare anubhav ki jad hamara mann hai. Jaisa hum sochte hain, waisa hi hum duniya ko dekhte hain. Dukh ka ek bada hissa bahar ki cheezon se nahi, unke baare me hamari soch se aata hai.</p>
+          <p>Unki doosri badi baat <strong>anitya</strong> ki hai: sab kuch badalta rehta hai. Na sukh sthayi hai, na dukh. Jab ye baat samajh aati hai, to hum kisi bhi mushkil me poori tarah toot nahi jaate.</p>
+          <p><strong>Aaj ke liye:</strong> jab kuch bahut bhaari lage, to khud se kahiye, “Ye abhi hai, par hamesha nahi rahega.”</p>
+
+          <h2>2. Thich Nhat Hanh: saans ek ghar hai</h2>
+          <p>Thich Nhat Hanh ne sikhaya ki shanti ke liye kahin door jaane ki zaroorat nahi. <strong>Hamari saans hi wo ghar hai jahan hum kabhi bhi laut sakte hain.</strong> Chalte hue, khaate hue, baatein karte hue, har pal ko poore dhyan se jeena hi unka maarg tha.</p>
+          <p><strong>Aaj ke liye:</strong> aaj ek kaam (jaise paani peena) poore dhyan se kijiye. Phone nahi, sochna nahi, bas paani.</p>
+
+          <h2>3. Eckhart Tolle: aap apne vichar nahi ho</h2>
+          <p>Tolle ki sabse badi baat ye hai ki hum aksar apne vicharon se itna jud jaate hain ki unhe hi “main” maan lete hain. Jabki hum wo hain jo un vicharon ko <strong>dekh</strong> raha hai. Jab hum sirf dekhte hain, to vichar ka zor kam ho jaata hai. Aur unke hisaab se, zyadatar dukh ya to beete hue kal ke pachtave me hota hai, ya aane wale kal ki chinta me. <strong>Is pal me</strong> sach me bahut kam dikkat hoti hai.</p>
+          <p><strong>Aaj ke liye:</strong> jab chinta aaye, to ruk kar poochiye, “Abhi, is pal me, kya sach me koi dikkat hai?”</p>
+
+          <h2>4. Swami Vivekananda: himmat apne andar hai</h2>
+          <p>Vivekananda ka sandesh taakat ka tha. Unka kehna tha ki kamzori koi sthayi cheez nahi, aur har insaan ke andar ek asim shakti maujood hai. Bas use jagana padta hai. Unhone yuvaon ko khud par bharosa karne, uthne aur rukne se pehle apne lakshya tak chalte rehne ki preranaa di.</p>
+          <p><strong>Aaj ke liye:</strong> ek chhota sa kaam chuniye jo aap taalte aa rahe ho, aur use aaj hi shuru kijiye, chahe sirf 5 minute ke liye.</p>
+
+          <h2>5. J. Krishnamurti: bina faisle ke dekhna</h2>
+          <p>Krishnamurti ne ek bahut gehri baat kahi: <strong>kisi cheez ko bina “achha” ya “bura” ka thappa lagaaye dekhna</strong> hi samajh ki shuruaat hai. Hum apne gusse, dar ya udaasi ko turant badalne ya dabaane lagte hain. Par agar hum bas use dekhein, to wo apne aap saaf hone lagta hai.</p>
+          <p><strong>Aaj ke liye:</strong> apni koi ek bhaavna (jaise gussa ya udaasi) aaj bina badle, sirf dekhiye.</p>
+
+          <h2>6. Dalai Lama: karuna sabse seedha dharm hai</h2>
+          <p>Dalai Lama bahut seedhi baat kehte hain: unka dharm <strong>dayaalu hona</strong> hai. Kisi ke liye achha sochna, kisi ki madad karna, ye sab sirf doosron ke liye nahi, hamare apne mann ko bhi sukun deta hai. Karuna sabse pehle apne aap se shuru hoti hai.</p>
+          <p><strong>Aaj ke liye:</strong> aaj ek insaan ke saath nermi se pesh aaiye, aur khud ke saath bhi.</p>
+
+          <h2>7. Jon Kabat-Zinn: lehron ko rok nahi sakte</h2>
+          <p>Kabat-Zinn ka mashhoor khayal hai ki hum zindagi ki lehron (musibaton) ko rok nahi sakte, par <strong>unpe tairna seekh sakte hain.</strong> Unhone mindfulness ko aise samjhaya: jaan-boojhkar, is pal me, bina faisle ke dhyan dena.</p>
+          <p><strong>Aaj ke liye:</strong> din me ek baar 3 minute rukkar sirf apni saans aur sharir ki sensation par dhyan dijiye.</p>
+
+          <h2>8. Pema Chödrön: wahin se shuru karo jahan ho</h2>
+          <p>Pema Chödrön sikhati hain ki hum aksar mushkil se bhaagte hain. Par <strong>asli badlav tab aata hai jab hum thodi takleef ke saath bhi tik kar baithna seekhte hain.</strong> Perfect hone ki zaroorat nahi, bas wahin se shuruaat karni hai jahan aap abhi ho.</p>
+          <p><strong>Aaj ke liye:</strong> “Main abhi jaisa hoon, wahin se shuru kar sakta hoon.” Is baat ko ek baar dohraiye.</p>
+
+          <h2>Sab ek hi jagah pahunchte hain</h2>
+          <p>Alag-alag raaste, alag-alag bhasha, par kuch baatein har jagah milti hain:</p>
+          <table class="wisdom-summary-table">
+            <thead>
+              <tr><th>Seekh</th><th>Kaun kehta hai</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sab badalta hai</td><td>Buddha</td></tr>
+              <tr><td>Is pal me jiyo</td><td>Thich Nhat Hanh, Tolle, Kabat-Zinn</td></tr>
+              <tr><td>Vichar aap nahi ho</td><td>Tolle, Krishnamurti</td></tr>
+              <tr><td>Khud par bharosa</td><td>Vivekananda</td></tr>
+              <tr><td>Dayaalu raho</td><td>Dalai Lama, Pema Chödrön</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Ant me</h2>
+          <p>Gyaan padhna aasaan hai, jeena mushkil. Isliye in sab baaton me se <strong>sirf ek</strong> chuniye, jo aapko aaj chhoti lagi ho, aur use kal tak jee kar dekhiye. Ek sachchi seekh, hazaar padhi hui seekhon se zyada kaam ki hoti hai.</p>
+          <p><strong>“Seekhna wahi, jo jeene me utar jaye.”</strong></p>
+          <p class="signature">Amarjeet</p>
+        </div>
+      </article>
+
+      <article class="standalone-article-card" id="globalPerspectivesArticle" hidden>
+        <header>
+          <h1>Raaste Alag, Manzil Ek</h1>
+          <p class="standalone-article-subtitle">Buddhist, Vedantic, Sufi aur anya paramparaon ki aawazein</p>
+          <div class="standalone-article-details">
+            <span>Global Perspectives</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="standalone-article-content">
+          <h2>Duniya ke alag kono se ek hi sawaal</h2>
+          <p>Insaan ne har yug me aur har desh me ek hi sawaal poocha hai: <strong>“Main kaun hoon, aur sukun kahan milta hai?”</strong> Kisi ne iska jawab pahad par baithkar khoja, kisi ne mandir me, kisi ne nach kar, aur kisi ne chup rehkar.</p>
+          <p>Is article me paanch paramparaon ki jhalak hai. Sabki bhasha alag hai, par bahut si baatein ek jaisi hain.</p>
+
+          <h2>1. Buddhist soch: dekho, samjho, chhodo</h2>
+          <p>Buddhist parampara ki shuruaat Buddha se hui, jo ye samajhna chahte the ki insaan dukhi kyun hota hai. Unka jawab simple tha: <strong>hum cheezon ko pakad kar rakhna chahte hain, jabki sab kuch badalta rehta hai.</strong> Isi pakad se dukh paida hota hai.</p>
+          <p>Isiliye Buddhist meditation me kuch badalna nahi sikhaya jaata. Sirf <strong>jagruk hokar dekhna</strong> sikhaya jaata hai. Zen parampara me ise “bas baithna” kehte hain, jahan koi bhi cheez hasil karne ki daud nahi hoti. Zen ki ek mashhoor seekh hai <strong>“beginner’s mind”</strong>, yaani seekhne wale ka mann, jo har pal ko pehli baar ki tarah dekhta hai.</p>
+          <p><strong>Aaj ke liye:</strong> apni subah ki chai ya paani ko aise peejiye jaise pehli baar pee rahe ho.</p>
+
+          <h2>2. Vedantic soch: tum wahi ho jo tum dhoond rahe ho</h2>
+          <p>Vedanta Upanishadon ki gyaan-parampara hai. Iski sabse gehri baat ye hai ki <strong>hamara asli swaroop (Atman) hamare naam, shareer, naukri ya number se bada hai.</strong> Advaita Vedanta kehta hai ki wahi aatma aur is brahmand ki chetna, dono ek hi hain. Chhandogya Upanishad ka mahavakya “tat tvam asi” isi taraf ishara karta hai.</p>
+          <p>Bhagavad Gita bhi kuch isi se milti-julti baat sikhati hai: <strong>karm karo, par phal ki pakad me mat uljho.</strong> Mehnat hamare haath me hai, natija nahi.</p>
+          <p><strong>Aaj ke liye:</strong> aaj koi ek kaam poori lagan se kijiye, aur uske natije ki chinta ko ek taraf rakh dijiye.</p>
+
+          <h2>3. Sufi soch: dil ka raasta</h2>
+          <p>Sufi islam ki wo dhara hai jo <strong>prem aur dil</strong> ke raaste se Ishwar ko khojti hai. Rumi, jo 13vi sadi ke Persian kavi the, Sufi parampara ke sabse jaane-pehchane naam hain. Unki shaayri me judaai ka dard, prem ki taakat aur khud ko mitakar sab kuch pa lene ki baat baar-baar aati hai.</p>
+          <p>Sufi parampara me <strong>Mevlevi sama (ghoomti hui dhyaan-nritya)</strong> bhi hota hai, jisme saadhak ghoomte hue apne ahankaar ko pighlane ki koshish karta hai. Message ye hai ki <strong>Ishwar tak pahunchne ke liye sirf dimaag nahi, poora dil chahiye.</strong></p>
+          <p><strong>Aaj ke liye:</strong> aaj kisi ko bina kisi matlab ke ek achhi baat boliye.</p>
+
+          <h2>4. Taoist soch: paani ki tarah bano</h2>
+          <p>Taoism China ki parampara hai, jiska mukhya granth <strong>Tao Te Ching</strong> (Lao Tzu se jodkar dekha jaata hai) hai. Iski sabse pyaari seekh hai <strong>wu wei</strong>, yaani zor lagaye bina, kudrat ke saath behna. Taoism me paani ko sabse achha udaharan mana gaya hai: wo narm hai, phir bhi pathar ko ghis deta hai, aur har rukavat ke aaspaas se raasta bana leta hai.</p>
+          <p>Zindagi me bhi aksar sab kuch zabardasti rokne ya badalne ki koshish thakati hai. Taoism kehta hai: <strong>jo cheez badal sakti hai usse badlo, aur jo nahi badal sakti, usse ladna chhodo.</strong></p>
+          <p><strong>Aaj ke liye:</strong> aaj ek aisi cheez pehchaniye jise aap zabardasti badalne ki koshish kar rahe the, aur use thoda chhod dijiye.</p>
+
+          <h2>5. Stoic soch: jo haath me hai, bas wahi</h2>
+          <p>Stoicism pracheen Greece aur Rome ki parampara hai. Marcus Aurelius (Roman samrat) aur Epictetus iske jaane-maane naam hain. Unki bunyadi seekh ye hai ki <strong>kuch cheezein hamare haath me hain (hamari soch, hamare kaam), aur kuch nahi (doosron ka vyavhar, haalat, beet chuka samay).</strong> Shanti tab milti hai jab hum apni taakat sirf pehle wale par lagate hain.</p>
+          <p><strong>Aaj ke liye:</strong> ek chinta ko do hisson me baantiye: “ye mere haath me hai” aur “ye mere haath me nahi hai”. Pehle wale par ek chhota kadam uthaiye.</p>
+
+          <h2>Paanchon me kya milta-julta hai?</h2>
+          <table class="wisdom-summary-table">
+            <thead>
+              <tr><th>Seekh</th><th>Kahan dikhti hai</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sab badalta hai, pakad mat rakho</td><td>Buddhist, Taoist</td></tr>
+              <tr><td>Asli “main” shareer aur naam se bada hai</td><td>Vedantic</td></tr>
+              <tr><td>Dil aur prem hi raasta hai</td><td>Sufi</td></tr>
+              <tr><td>Natije ko chhodo, karm par dhyan do</td><td>Vedantic (Gita), Stoic</td></tr>
+              <tr><td>Zor lagaye bina jeena</td><td>Taoist, Zen</td></tr>
+            </tbody>
+          </table>
+          <p>Alag-alag desh, alag-alag bhasha, par <strong>andar ki shanti ka raasta lagbhag har jagah ek jaisa dikhta hai: dhyaan, nermi aur chhodna.</strong></p>
+
+          <p>Kisi ek parampara ko “sabse badi” maanna zaroori nahi. Har raasta kisi na kisi ko manzil tak le gaya hai. Aap wahi chuniye jo aapke dil se baat kare, aur baaki se sirf seekhte rahiye.</p>
+          <p><strong>“Nadiyan alag-alag behti hain, par sabki manzil ek hi samundar hai.”</strong></p>
+          <p class="signature">Amar</p>
+        </div>
+      </article>
+
+      <article class="standalone-article-card" id="innerExplorationArticle" hidden>
+        <header>
+          <h1>Nazar Andar Ki Taraf</h1>
+          <p class="standalone-article-subtitle">Rukiye, dheere padhiye, aur khud se mulaqat kijiye</p>
+          <div class="standalone-article-details">
+            <span>Inner Exploration</span>
+            <span>7 min read</span>
+          </div>
+        </header>
+
+        <div class="standalone-article-content">
+          <h2>Hum sabko jaante hain, bas khud ko nahi</h2>
+          <p>Hum apne doston ki pasand jaante hain, mobile ke saare features jaante hain, aur khabrein bhi roz padhte hain. Par agar koi poochhe, <strong>“Aap andar se abhi kaisa mehsoos kar rahe ho?”</strong> to aksar jawab nahi milta.</p>
+          <p>Ye sawaal naya nahi hai. Pracheen Greece me Socrates ne kaha tha ki <strong>“khud ko jaano”</strong> hi gyaan ki shuruaat hai. Aur yahi baat Upanishadon se lekar Buddha tak, har jagah milti hai. Inner Exploration ka matlab hai bas itna: <strong>thoda ruk kar, apni taraf dekhna.</strong></p>
+
+          <h2>Pehli shart: ruk jaana</h2>
+          <p>Aaj ki zindagi me hum khaali pal bhi mobile se bhar dete hain. Intezaar karte hue phone, khaate hue phone, sone se pehle phone. Is wajah se mann ko kabhi apni baat kehne ka mauka hi nahi milta.</p>
+          <p>Isliye inner exploration ki pehli shart hai: <strong>kuch minute ke liye ruk jaana.</strong> Phone door, koi kaam nahi, koi lakshya nahi. Bas thodi si khaali jagah.</p>
+          <p><strong>Abhyas 1 (2 minute):</strong> abhi apna phone neeche rakhiye, aur 2 minute sirf baithiye. Dekhiye ki mann kya kehta hai.</p>
+
+          <h2>Dusri shart: dheere padhna, dheere sochna</h2>
+          <p>Jaldi padhne se jaankari milti hai, par <strong>dheere padhne se samajh milti hai.</strong> Jab koi baat dil ko chhoo jaye, to uspe ruk jaiye. Ek line ko do baar padhiye. Aankhein band karke sochiye ki ye mere jeevan me kahan lagu hoti hai.</p>
+          <p>Dheere padhna ek tarah ka dhyaan hai. Isme hum shabdon ke saath-saath apne andar ki pratikriya ko bhi sunte hain.</p>
+          <p><strong>Abhyas 2:</strong> is article ka koi ek vaakya chuniye jo aapko achha laga. Use apni diary ya phone ke notes me likh lijiye.</p>
+
+          <h2>Teesri shart: sharir se shuruaat</h2>
+          <p>Mann ko samajhna mushkil lagta hai, isliye shuruaat sharir se kijiye. <strong>Sharir hamesha kuch kehta rehta hai:</strong> kandhe akde hue hain, jabda kasa hua hai, pet me gaanth hai. In sanketon ko hum aksar andekha kar dete hain.</p>
+          <p><strong>Abhyas 3 (3 minute, body scan):</strong></p>
+          <ol>
+            <li>Aaram se baith jaiye, aankhein band kijiye.</li>
+            <li>Dhyan paon se shuru kijiye, phir dheere-dheere pindliyon, ghutne, pet, seena, kandhe, gardan aur chehre tak le jaiye.</li>
+            <li>Jahan bhi tanav ya bhaaripan dikhe, use bina badle dekhiye. Bas itna kehiye, “Yahan kuch hai.”</li>
+          </ol>
+          <p>Isme kuch “sahi” karna nahi hai. Bas dekhna hai.</p>
+
+          <h2>Chauthi shart: bhaavnaon ko naam dena</h2>
+          <p>Jab hum bahut kuch ek saath mehsoos karte hain, to sab ek gol-matol bojh jaisa lagta hai. Par jab hum use <strong>naam dete hain</strong> (jaise “ye chinta hai”, “ye akelapan hai”, “ye thakaan hai”), to wo thoda saaf ho jaata hai aur sambhalne layak banta hai.</p>
+          <p><strong>Abhyas 4:</strong> aaj raat ye vaakya poora kijiye: <em>“Aaj mujhe sabse zyada ___ mehsoos hua, kyunki ___.”</em> Jo bhi pehla jawab aaye, wahi likhiye.</p>
+
+          <h2>Paanchvi shart: kuch sawaal, jinke jawab jaldi nahi chahiye</h2>
+          <p>Kuch sawaal aise hote hain jo jawab se zyada <strong>rukne ke liye</strong> hote hain. Inhe roz ek-ek karke apne aap se poochhiye:</p>
+          <ul>
+            <li>Abhi meri sabse badi chinta kya hai, aur kya wo aaj meri hai ya kal ki?</li>
+            <li>Mujhe kis cheez se sukun milta hai?</li>
+            <li>Main kis cheez ko zabardasti pakde hue hoon?</li>
+            <li>Aaj maine kis baat ke liye shukriya mehsoos kiya?</li>
+            <li>Agar mera sabse achha dost meri jagah hota, to main use kya kehta?</li>
+          </ul>
+          <p>Jawab turant na aaye to koi baat nahi. Sawal ko mann me rehne dijiye.</p>
+
+          <h2>Ek zaroori baat: andar jaana akela jaana nahi hai</h2>
+          <p>Khud ko dekhna bahut achha hai, par kabhi-kabhi andar kuch aisa dikhta hai jo bahut bhaari hota hai: purana dukh, regret ya dar. Aise me <strong>zabardasti aur gehre mat jaiye.</strong> Wapas saans par aa jaiye, thoda paani peejiye, ya kisi apne se baat kijiye.</p>
+          <p>Inner exploration ka matlab dukh me akele doob jaana nahi, <strong>dheere-dheere samajhna hai.</strong> Agar koi vichar bahut bhaari ya darawna lage, to kisi bharosemand insaan se ya kisi counsellor se baat karna samajhdari hai, kamzori nahi.</p>
+
+          <p>Duniya ki taraf dekhna hamari aadat hai, aur wo zaroori bhi hai. Par kabhi-kabhi nazar ko andar mod lena zindagi ko saaf dikhata hai. Roz sirf <strong>5 minute</strong> bhi kaafi hain.</p>
+          <p><strong>“Jo khud ko jaan leta hai, use duniya se kam darr lagta hai.”</strong></p>
+          <p class="signature">Amar</p>
+        </div>
+      </article>
+    </div>
+  </main>
+
   <!-- ═══ SCRIPTS ═══ -->
   <script>
+    const requestedArticle = new URLSearchParams(window.location.search).get('article');
+    if (requestedArticle === 'this-too-shall-change' || requestedArticle === 'timeless-wisdom' || requestedArticle === 'global-perspectives' || requestedArticle === 'inner-exploration') {
+      document.body.classList.add('article-view');
+      document.getElementById('standaloneArticle').hidden = false;
+      const isTimelessWisdom = requestedArticle === 'timeless-wisdom';
+      const isGlobalPerspectives = requestedArticle === 'global-perspectives';
+      const isInnerExploration = requestedArticle === 'inner-exploration';
+      document.getElementById('changeArticle').hidden = isTimelessWisdom || isGlobalPerspectives || isInnerExploration;
+      document.getElementById('timelessWisdomArticle').hidden = !isTimelessWisdom;
+      document.getElementById('globalPerspectivesArticle').hidden = !isGlobalPerspectives;
+      document.getElementById('innerExplorationArticle').hidden = !isInnerExploration;
+      document.title = isInnerExploration
+        ? 'Nazar Andar Ki Taraf | InnerPeace'
+        : isGlobalPerspectives
+          ? 'Raaste Alag, Manzil Ek | InnerPeace'
+          : isTimelessWisdom
+            ? 'Wo Baatein Jo Kabhi Purani Nahi Hotin | InnerPeace'
+            : 'This Too Shall Change | InnerPeace';
+    }
+
     /* Dynamic Year */
     document.getElementById('year').textContent = new Date().getFullYear();
 
