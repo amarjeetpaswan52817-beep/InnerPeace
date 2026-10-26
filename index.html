@@ -490,6 +490,112 @@
       line-height: 1.6;
     }
 
+    .proposal-card {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid transparent;
+      background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
+      transition: box-shadow 0.28s ease, border-color 0.28s ease, transform 0.22s ease;
+    }
+
+    .proposal-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+    }
+
+    .proposal-card.open {
+      border-color: hsla(28,62%,36%,0.35);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+    }
+
+    .proposal-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .proposal-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      background: hsla(28,62%,36%,0.08);
+      color: var(--primary);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+
+    .proposal-chevron {
+      display: inline-block;
+      transition: transform 0.25s ease;
+      font-size: 0.85rem;
+    }
+
+    .proposal-card.open .proposal-chevron {
+      transform: rotate(180deg);
+    }
+
+    .proposal-article {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 0.32s ease, opacity 0.2s ease, margin 0.2s ease;
+      overflow: hidden;
+      margin-top: 0;
+      padding-top: 0;
+      border-top: 0 solid var(--border);
+      color: var(--fg-muted);
+    }
+
+    .proposal-card.open .proposal-article {
+      display: grid;
+      grid-template-rows: 1fr;
+      opacity: 1;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .proposal-article-inner {
+      overflow: hidden;
+    }
+
+    .proposal-article h4 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--fg);
+      margin-bottom: 1rem;
+    }
+
+    .proposal-article .meta {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .proposal-article p {
+      margin-bottom: 0.9rem;
+      font-size: 0.83rem;
+      line-height: 1.8;
+    }
+
+    .proposal-article .closing {
+      margin-top: 1rem;
+      font-weight: 600;
+      color: var(--fg);
+    }
+
     /* ══════════════════════════
        FEATURED ESSAYS
     ══════════════════════════ */
@@ -1137,16 +1243,72 @@
 
       <div class="benefits-grid">
 
-        <div class="benefit-card fade-up" style="transition-delay:0s;">
+        <div class="benefit-card proposal-card fade-up" style="transition-delay:0s;">
           <div class="benefit-icon" style="background:#d1fae5;color:#065f46;">
             ✍️
           </div>
-          <div>
+          <div class="proposal-summary">
             <h3>Original Proposals</h3>
             <p>
               Thoughtful, personal writing on meditation,
               yoga philosophy, and the journey inward.
             </p>
+          </div>
+
+          <div class="proposal-toggle">
+            <span>Read article</span>
+            <span class="proposal-chevron">▾</span>
+          </div>
+
+          <div class="proposal-article">
+            <div class="proposal-article-inner">
+              <span class="meta">Meditation | 8 min read</span>
+              <h4>This Too Shall Change</h4>
+
+              <p>
+                There are phases in life when a person looks fine on the outside but is falling apart on the inside. That is what happened to me. There came a time when I began to feel that I had been left behind, and that everyone else had moved ahead. A regret settled in my mind, and it slowly grew heavier.
+              </p>
+
+              <p>
+                Then everything began to change. I lost my appetite. My head felt heavy, as if something inside was about to burst. I had stopped meeting people. Even talking on the phone felt like a burden. There was just a room, and me.
+              </p>
+
+              <p>
+                In that phase, I learned something I still remember today: when a person keeps thinking alone, sorrow keeps growing, because the mind keeps going around in the same circle.
+              </p>
+
+              <p>
+                One day, while scrolling on my phone, I came across a book by Osho. I wasn’t looking for anything deep. My curiosity was simply about what had been written on life and death. The book spoke about meditation. One idea that I understood most deeply was that life and death are not separate, they are two ends of the same thread.
+              </p>
+
+              <p>
+                Every morning I would sit quietly. Eyes closed, back straight, attention only on the breath. The breath comes in, the breath goes out. That’s all. In meditation, this “bringing back” is the real practice. No matter how many times the mind wanders, coming back each time is the victory.
+              </p>
+
+              <p>
+                The first thing meditation taught me was that thoughts and I are not the same. When we are sad, we start believing “I am worthless.” But when we watch our thoughts in meditation, we see that they are like clouds. They come, they linger, and they pass. The sky stays the same, while the clouds keep moving.
+              </p>
+
+              <p>
+                One short sentence is now my greatest strength: “This too shall change.” Earlier, when trouble came, I would panic. Now I pause for a moment. I tell myself that this is here right now, but it won’t stay forever. And strangely, it is true. Every difficulty in my life, however big it seemed, has changed with time.
+              </p>
+
+              <p>
+                Meditation also taught me another deep thing: peace is not found in loneliness, it is found in staying connected. When we are in pain, we often cut ourselves off from the people close to us. But whatever we share with someone we trust, half of its weight is lifted.
+              </p>
+
+              <p>
+                I won’t claim that meditation has solved all my problems. But one thing has changed: now I have a way to face them. Earlier, when trouble came, I would break down. Now I take a deep breath, remind myself that this will change, and then take one small step.
+              </p>
+
+              <p class="closing">
+                And whenever the darkness feels very deep, just remember one sentence: “This too shall change.”
+              </p>
+
+              <p class="closing" style="margin-top:1.25rem; font-size:0.8rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--primary);">
+                — Amar
+              </p>
+            </div>
           </div>
         </div>
 
@@ -1259,6 +1421,25 @@
 
           <div class="essay-footer">
             <span>4 min read</span>
+            <span class="essay-read">
+              Read <span>→</span>
+            </span>
+          </div>
+        </article>
+
+        <article class="essay-card fade-up" style="transition-delay:0.36s;">
+          <span class="essay-tag tag-meditation">Meditation</span>
+
+          <h3>This Too Shall Change</h3>
+
+          <p>
+            When sorrow feels endless and the mind cannot see a way forward,
+            meditation teaches one simple truth: everything changes, even pain.
+            A quiet breath becomes the beginning of inner strength.
+          </p>
+
+          <div class="essay-footer">
+            <span>8 min read</span>
             <span class="essay-read">
               Read <span>→</span>
             </span>
@@ -1588,6 +1769,21 @@
     ham.addEventListener('click', () => {
       ham.classList.toggle('open');
       mNav.classList.toggle('open');
+    });
+
+    /* Original Proposals Toggle */
+    document.querySelectorAll('.proposal-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+
+        document.querySelectorAll('.proposal-card').forEach(item => {
+          item.classList.remove('open');
+        });
+
+        if (!isOpen) {
+          card.classList.add('open');
+        }
+      });
     });
 
     /* Language Dropdown Toggle */
